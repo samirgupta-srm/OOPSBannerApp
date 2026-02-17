@@ -1,20 +1,19 @@
-package college;
-
-/**
- * OOPSBannerApp
- * Prints the literal text "OOPS" to the console.
- *
- * @author Samir
- * @version 1.0
- */
 public class OOPSBannerApp {
 
-    /**
-     * Main method – entry point of Java application
-     */
     public static void main(String[] args) {
-        System.out.println("OOPS");
 
+        String line1 = String.join("", " *** ", " *** ", " *** ", " *** ");
+        String line2 = String.join("", " * * ", " * * ", " * * ", " *   ");
+        String line3 = String.join("", " * * ", " *** ", " *   ", " *** ");
+        String line4 = String.join("", " * * ", " * * ", " *   ", "   * ");
+        String line5 = String.join("", " * * ", " * * ", " *   ", "   * ");
+        String line6 = String.join("", " *** ", " *** ", " *   ", " *** ");
 
+        System.out.println(line1);
+        System.out.println(line2);
+        System.out.println(line3);
+        System.out.println(line4);
+        System.out.println(line5);
+        System.out.println(line6);
     }
 }
