@@ -2,18 +2,18 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String line1 = String.join("", " *** ", " *** ", " *** ", " *** ");
-        String line2 = String.join("", " * * ", " * * ", " * * ", " *   ");
-        String line3 = String.join("", " * * ", " *** ", " *   ", " *** ");
-        String line4 = String.join("", " * * ", " * * ", " *   ", "   * ");
-        String line5 = String.join("", " * * ", " * * ", " *   ", "   * ");
-        String line6 = String.join("", " *** ", " *** ", " *   ", " *** ");
+        // Store banner lines inside a String array
+        String[] banner = {
+            String.join("  ", "W   W", "EEEEE", "L    ", "C   C", " OOO ", "M   M", "EEEEE"),
+            String.join("  ", "W   W", "E    ", "L    ", "C    ", "O   O", "MM MM", "E    "),
+            String.join("  ", "W W W", "EEEE ", "L    ", "C    ", "O   O", "M M M", "EEEE "),
+            String.join("  ", "WW WW", "E    ", "L    ", "C    ", "O   O", "M   M", "E    "),
+            String.join("  ", "W   W", "EEEEE", "LLLLL", "C   C", " OOO ", "M   M", "EEEEE")
+        };
 
-        System.out.println(line1);
-        System.out.println(line2);
-        System.out.println(line3);
-        System.out.println(line4);
-        System.out.println(line5);
-        System.out.println(line6);
+        // Loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
