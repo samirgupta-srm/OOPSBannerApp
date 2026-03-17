@@ -1,80 +1,83 @@
 public class OOPSBannerApp {
 
-    // Static methods for each letter
-    static String[] getW() {
-        return new String[]{
+    // Static Inner Class
+    static class CharacterPatternMap {
+        char character;
+        String[] pattern;
+
+        CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Create patterns
+        CharacterPatternMap W = new CharacterPatternMap('W', new String[]{
             "W   W",
             "W   W",
             "W W W",
             "WW WW",
             "W   W"
-        };
-    }
+        });
 
-    static String[] getE() {
-        return new String[]{
+        CharacterPatternMap E = new CharacterPatternMap('E', new String[]{
             "EEEEE",
             "E    ",
             "EEEE ",
             "E    ",
             "EEEEE"
-        };
-    }
+        });
 
-    static String[] getL() {
-        return new String[]{
+        CharacterPatternMap L = new CharacterPatternMap('L', new String[]{
             "L    ",
             "L    ",
             "L    ",
             "L    ",
             "LLLLL"
-        };
-    }
+        });
 
-    static String[] getC() {
-        return new String[]{
+        CharacterPatternMap C = new CharacterPatternMap('C', new String[]{
             "C   C",
             "C    ",
             "C    ",
             "C    ",
             "C   C"
-        };
-    }
+        });
 
-    static String[] getO() {
-        return new String[]{
+        CharacterPatternMap O = new CharacterPatternMap('O', new String[]{
             " OOO ",
             "O   O",
             "O   O",
             "O   O",
             " OOO "
-        };
-    }
+        });
 
-    static String[] getM() {
-        return new String[]{
+        CharacterPatternMap M = new CharacterPatternMap('M', new String[]{
             "M   M",
             "MM MM",
             "M M M",
             "M   M",
             "M   M"
-        };
-    }
+        });
 
-    public static void main(String[] args) {
+        // Store word WELCOME
+        CharacterPatternMap[] word = {W, E, L, C, O, M, E};
 
-        String[] w = getW();
-        String[] e = getE();
-        String[] l = getL();
-        String[] c = getC();
-        String[] o = getO();
-        String[] m = getM();
-
-        // Build banner using loop
+        // Print banner
         for (int i = 0; i < 5; i++) {
-            System.out.println(
-                String.join("  ", w[i], e[i], l[i], c[i], o[i], m[i], e[i])
-            );
+            StringBuilder line = new StringBuilder();
+
+            for (CharacterPatternMap ch : word) {
+                line.append(ch.getPattern()[i]).append("  ");
+            }
+
+            System.out.println(line);
         }
     }
 }
